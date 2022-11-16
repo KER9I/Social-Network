@@ -1,0 +1,25 @@
+.dialogs {
+display: grid;
+grid-template-columns: 200px 100%;
+padding: 15px;
+}
+
+.dialogsUsers {
+padding-left: 15px;
+
+
+}
+
+.user {
+margin-bottom: 10px;
+
+
+}
+
+.messages {
+
+}
+
+.message {
+margin-bottom: 10px;  
+}

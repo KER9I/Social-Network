@@ -1,0 +1,16 @@
+.nav {
+  grid-area: nav;
+  background-color: greenyellow;
+  height: 100%;
+  padding-left: 15px;
+  }
+  .link {
+  margin-bottom: 5px; 
+  }
+  
+  .link a {
+    color: rgb(1, 124, 35);
+  }
+ 
+
+ 
