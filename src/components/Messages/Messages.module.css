@@ -5,21 +5,23 @@ padding: 15px;
 }
 
 .dialogsUsers {
-padding-left: 15px;
+
 
 
 }
 
 .user {
 margin-bottom: 10px;
-
-
-}
-
-.messages {
+border-radius: 30px;
+vertical-align: middle;
+padding-right: 10px;
 
 }
+
+/* .messages {
+} */
 
 .message {
-margin-bottom: 10px;  
+margin-bottom: 53.5px; 
+
 }

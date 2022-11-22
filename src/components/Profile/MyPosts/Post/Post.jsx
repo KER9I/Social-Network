@@ -6,7 +6,7 @@ const Post = (props) => {
         <div className={style.Post}>
           <img src='https://cdn-icons-png.flaticon.com/512/147/147142.png'></img>
           { props.message }
-          <div><button><span>Like</span></button> {props.likecounter} </div>
+          <div><button onClick={ () => { alert('Click') } }><span>Like</span></button> {props.likecounter} </div>
         </div>  
   );
 }
