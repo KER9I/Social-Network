@@ -7,7 +7,7 @@ import {sendMessageActionCreator, updateNewMessageTextActionCreator} from './../
 
 const Messages = (props) => {
 
-
+    //ss
     let state = props.store.getState().messagesPage;
 
     let messageDataElements = state.messagesData.map((d) => <Usertext name={d.name} id={d.id} />);
