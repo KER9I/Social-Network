@@ -2,12 +2,12 @@ import React from 'react';
 import style from './Messages.module.css'
 import Usertext from './UserText/UserText';
 import Messagetext from './MessagesText/MessagesText';
-import {sendMessageActionCreator, updateNewMessageTextActionCreator} from './../../redux/state';
+import {sendMessageActionCreator, updateNewMessageTextActionCreator} from './../../redux/messages-reducer';
 
 
 const Messages = (props) => {
 
-    ///sss
+    
     let state = props.store.getState().messagesPage;
 
     let messageDataElements = state.messagesData.map((d) => <Usertext name={d.name} id={d.id} />);
