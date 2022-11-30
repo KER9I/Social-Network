@@ -21,11 +21,11 @@ const App = (props) => {
         <Nav />
         <div className='app-content'>
           <Routes>
-            <Route path='/profile' element={<Profile store={props.store} />} />
+            <Route path='/profile' element={<Profile />} />
             
             <Route path='/friends' element={<Friends />} />
             
-            <Route path='/messages' element={<MessagesContainer store={props.store} />} />
+            <Route path='/messages' element={<MessagesContainer />} />
             
             <Route path='/news' element={<News />} />
             
