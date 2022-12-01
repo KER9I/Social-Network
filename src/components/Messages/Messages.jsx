@@ -9,8 +9,8 @@ const Messages = (props) => {
 
     let state = props.messagesPage;
 
-    let messageDataElements = state.messagesData.map((d) => <Usertext name={d.name} id={d.id} />);
-    let messagesTextElements = state.messagesText.map((t) => <Messagetext message={t.message} />);
+    let messageDataElements = state.messagesData.map((d) => <Usertext name={d.name} key={d.id} id={d.id} />);
+    let messagesTextElements = state.messagesText.map((t) => <Messagetext message={t.message} key={t.id} />);
     let newMessageText = state.newMessageText;
 
     let onSendMessage = () => {
