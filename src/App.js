@@ -6,6 +6,7 @@ import Profile from './components/Profile/Profile';
 import Info from './components/Info/Info';
 import Friends from './components/Friends/Friends';
 import Music from './components/Music/Music';
+import UsersContainer from './components/Users/UsersContainer';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -26,6 +27,8 @@ const App = (props) => {
             <Route path='/friends' element={<Friends />} />
             
             <Route path='/messages' element={<MessagesContainer />} />
+
+            <Route path='/users' element={<UsersContainer />} />
             
             <Route path='/news' element={<News />} />
             

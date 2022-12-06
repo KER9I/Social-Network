@@ -16,6 +16,9 @@ const Nav = () => {
         <NavLink to='/messages' className={style.a}>Messages</NavLink>
       </div>
       <div className={style.link}>
+        <NavLink to='/users' className={style.a}>Users</NavLink>
+      </div>
+      <div className={style.link}>
         <NavLink to='/news' className={style.a}>News</NavLink>
       </div>
       <div className={style.link}>
