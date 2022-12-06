@@ -13,7 +13,7 @@ let Users = (props) => {
         for (let i=1; i <= pagesCount; i++) {
             pages.push(i);
         }
-        pages.splice(1, 2190);
+        pages.splice(11, 2191);
 
         return (
             <div className={style.content}>
