@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import Header from './components/Header/Header';
+import HeaderCountainer from './components/Header/HeaderCountainer';
 import Nav from './components/Nav/Nav';
 import Info from './components/Info/Info';
 import Friends from './components/Friends/Friends';
@@ -18,7 +18,7 @@ const App = (props) => {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
-        <Header />
+        <HeaderCountainer />
         <Nav />
         <div className='app-content'>
           <Routes>
