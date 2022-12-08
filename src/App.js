@@ -2,7 +2,6 @@ import './App.css';
 import React from 'react';
 import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
-import Profile from './components/Profile/Profile';
 import Info from './components/Info/Info';
 import Friends from './components/Friends/Friends';
 import Music from './components/Music/Music';
@@ -11,6 +10,7 @@ import News from './components/News/News';
 import Settings from './components/Settings/Settings';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MessagesContainer from './components/Messages/MessagesContainer';
+import ProfileContainer from './components/Profile/ProfileContainer';
 
 
 
@@ -22,7 +22,9 @@ const App = (props) => {
         <Nav />
         <div className='app-content'>
           <Routes>
-            <Route path='/profile' element={<Profile />} />
+            <Route path='/profile/:userId' element={<ProfileContainer />} />
+
+            <Route path='/profile/' element={<ProfileContainer />} />
             
             <Route path='/friends' element={<Friends />} />
             
