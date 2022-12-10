@@ -7,6 +7,7 @@ import axios from 'axios';
 
 
 
+
 let Users = (props) => {
 
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -34,7 +35,8 @@ let Users = (props) => {
                     </div>
                     <div>
                         {u.followed
-                            ? <button onClick={() => {
+                            ? <button disabled={props.followingInProgres.some(id => id === u.id)} onClick={() => {
+                                props.toggleFollowingInProgres(true, u.id);
                                 axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
                                     withCredentials: true,
                                     headers: {
@@ -44,9 +46,11 @@ let Users = (props) => {
                                     if (response.data.resultCode === 0) {
                                     props.unfollow(u.id);
                                 }
+                                props.toggleFollowingInProgres(false, u.id);
                                 })
                             }}>Unfollow</button>
-                            : <button onClick={() => {
+                            : <button disabled={props.followingInProgres.some(id => id === u.id)} onClick={() => {
+                                props.toggleFollowingInProgres(true, u.id);
                                 axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
                                     withCredentials: true,
                                     headers: {
@@ -56,6 +60,7 @@ let Users = (props) => {
                                     if (response.data.resultCode === 0) {
                                     props.follow(u.id);
                                 }
+                                props.toggleFollowingInProgres(false, u.id);
                                 })
                             }}>Follow</button>}
                     </div>
