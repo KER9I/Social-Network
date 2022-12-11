@@ -2,7 +2,6 @@ import React from 'react';
 import style from './Users.module.css'
 import avaPhoto from '../../assets/images/avaPhoto.jpg'
 import { NavLink } from 'react-router-dom';
-//import { usersAPI } from '../../api/api';
 
 
 

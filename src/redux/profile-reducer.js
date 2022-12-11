@@ -1,3 +1,5 @@
+import { profileAPI } from '../api/api';
+
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
@@ -43,6 +45,9 @@ const profileReducer = (state = initialState, action) => {
             return state;
     }
 }
+
+/*ActionCreators*/
+
 export const addPostActionCreator = () => {
     return {
         type: ADD_POST
@@ -60,5 +65,17 @@ export const setUserProfile = (profile) => {
         profile
     }
 }
+
+
+/*ThunkCreators*/
+
+export const getUserProfile = (userId) => {
+    return (dispatch) => {
+        profileAPI.getProfile(userId).then(response => {
+            dispatch(setUserProfile(response.data));
+        });
+    }
+}
+
 
 export default profileReducer;
