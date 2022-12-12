@@ -11,6 +11,7 @@ import Settings from './components/Settings/Settings';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MessagesContainer from './components/Messages/MessagesContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import Login from './components/Login/Login';
 
 
 
@@ -31,6 +32,8 @@ const App = (props) => {
             <Route path='/messages' element={<MessagesContainer />} />
 
             <Route path='/users' element={<UsersContainer />} />
+
+            <Route path='/login' element={<Login />} />
             
             <Route path='/news' element={<News />} />
             

@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
 import { sendMessageActionCreator, updateNewMessageTextActionCreator } from '../../redux/messages-reducer';
 import Messages from './Messages';
+import { withAuthNavigate } from '../../hoc/withAuthNaviget';
+import { compose } from 'redux';
 
 
 
 let mapStateToProps = (state) => {
     return {
-    messagesPage: state.messagesPage
+    messagesPage: state.messagesPage,
     }
 }
 
@@ -21,6 +23,11 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages);
 
-export default MessagesContainer;
+
+
+
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withAuthNavigate
+)(Messages);

@@ -14,6 +14,7 @@ const ProfileInformation = (props) => {
       </div>
       <div>
         <img src={props.profile.photos.large} alt='foto'></img>
+        
         avatat + information
       </div>
     </div>

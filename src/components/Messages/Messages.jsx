@@ -2,6 +2,8 @@ import React from 'react';
 import style from './Messages.module.css'
 import Usertext from './UserText/UserText';
 import Messagetext from './MessagesText/MessagesText';
+import { Navigate } from 'react-router-dom';
+
 
 
 const Messages = (props) => {
@@ -21,6 +23,11 @@ const Messages = (props) => {
         let newText = event.target.value;
         props.updateNewMessageText(newText);
     }
+
+    if (!props.isAuth) {
+        return <Navigate  to={'/login'} />
+    }
+
     return (
         <div className={style.dialogs}>
             <div className={style.dialogsUsers}>
