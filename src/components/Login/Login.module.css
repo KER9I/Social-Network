@@ -1,3 +1,21 @@
 .content {
     text-align: center;
 }
+
+.error {
+    color: red;
+}
+
+.field {
+    margin: 20px;
+    font-weight: 600;
+    font-size: medium
+}
+.fieldInput {
+    font-weight: 600;
+    font-size: medium
+}
+.fieldButton {
+    margin: 10px;
+    font-size: medium
+}
