@@ -18,10 +18,11 @@ padding-right: 10px;
 
 }
 
-/* .messages {
-} */
+.field {
+    font-weight: 600;
+    font-size:14px
+}
 
 .message {
 margin-bottom: 53.5px; 
-
 }

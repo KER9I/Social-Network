@@ -6,4 +6,12 @@
   .content {
     padding: 10px;
   }
-  
+
+  .field {
+    font-weight: 600;
+    font-size:14px
+}
+.text {
+  width: 300px;
+}
+

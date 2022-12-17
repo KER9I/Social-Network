@@ -2,20 +2,25 @@
     text-align: center;
 }
 
-.error {
-    color: red;
-}
-
 .field {
     margin: 20px;
     font-weight: 600;
-    font-size: medium
+    font-size:14px
 }
+.error {
+    color: red;
+}
+.errorField {
+    border: solid red 2px;
+    font-weight: 600;
+    font-size:14px
+} 
+
 .fieldInput {
     font-weight: 600;
-    font-size: medium
+    font-size: 14px
 }
 .fieldButton {
     margin: 10px;
-    font-size: medium
+    font-size: 14px
 }

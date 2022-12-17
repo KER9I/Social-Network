@@ -6,24 +6,22 @@ import * as yup from 'yup';
 
 
 const LoginForm = () => {
-
     const loginValidateSchema = yup.object().shape({
         login: yup.string().email('Enter correct email').required('Necessarily'),
         password: yup.string().typeError('Must be string').required('Necessarily')
     })
-
     return (
         <Formik initialValues={{ login: '', password: '', rememberMe: false }}
             validationSchema={loginValidateSchema}
             onSubmit={(values) => { console.log(values) }}>
-            {() => (
-                <Form>
+            {({touched, errors}) => (
+                <Form >
                     <div className={style.field}>
-                        <Field type='email'  className={style.fieldInput} name='login' placeholder='Login' />
+                        <Field type='email'  className={touched.login && errors.login ? style.errorField : style.fieldInput} name='login' placeholder='Login' />
                         <ErrorMessage className={style.error} name='login' component='div' />
                     </div>
                     <div className={style.field}>
-                        <Field type='password' className={style.fieldInput} name='password' placeholder='Password' />
+                        <Field type='password' className={touched.password && errors.password ? style.errorField : style.fieldInput} name='password' placeholder='Password' />
                         <ErrorMessage className={style.error} name='password' component='div' />
                     </div>
                     <div >
