@@ -8,16 +8,30 @@ import { Navigate } from 'react-router-dom';
 
 
 
-const LoginForm = (props) => {
+
+
+
+const Login = (props) => {
+    const onSubmit = (values, {setStatus}) => {
+        props.login(values.email, values.password, values.rememberMe, setStatus)
+    }
     const loginValidateSchema = yup.object().shape({
         email: yup.string().email('Enter correct email').required('Necessarily'),
         password: yup.string().typeError('Must be string').required('Necessarily')
     })
+
+    if (props.isAuth) {
+        return (
+            <Navigate to={'/profile'} />
+        )
+    }
     return (
-        <Formik initialValues={{ email: '', password: '', rememberMe: false }}
+        <div className={style.content}>
+        <h1>Login</h1>
+            <Formik initialValues={{ email: '', password: '', rememberMe: false }}
             validationSchema={loginValidateSchema}
-            onSubmit={(values) => { props.login(values) }}>
-            {({touched, errors}) => (
+            onSubmit={onSubmit}>
+            {({touched, errors, status}) => (
                 <Form >
                     <div className={style.field}>
                         <Field type='email'  className={touched.email && errors.email ? style.errorField : style.fieldInput} name='email' placeholder='Email' />
@@ -30,30 +44,13 @@ const LoginForm = (props) => {
                     <div >
                         <Field type='checkbox' name='rememberMe' /> remember me
                     </div>
+                    <div className={style.error}>{status}</div>
                     <div>
                         <button className={style.fieldButton} type='submit'>Login</button>
                     </div>
                 </Form>
             )}
         </Formik>
-    )
-}
-
-
-const Login = (props) => {
-    let onLogin = (values) => {
-        props.login(values.email, values.password, values.rememberMe)
-    }
-
-    if (props.isAuth) {
-        return (
-            <Navigate to={'/profile'} />
-        )
-    }
-    return (
-        <div className={style.content}>
-        <h1>Login</h1>
-        <LoginForm login={onLogin} />
     </div>
     )
 }

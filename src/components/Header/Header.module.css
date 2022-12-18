@@ -20,5 +20,6 @@
   .button {
     background-color: rgb(0, 75, 34);
     color: beige;
+    padding: 5px;
     border: dashed rgb(0, 33, 15) 1px;
   }
