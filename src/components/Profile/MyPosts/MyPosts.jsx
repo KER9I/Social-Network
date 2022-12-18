@@ -10,6 +10,7 @@ let MyPostsElements = props.postData.map( (p) => <Post message={p.message} likec
 
 let onAddPost = (values) => {
   props.addPost(values.newPostText)
+  
 }
   return (
     <div className={style.content}>

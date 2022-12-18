@@ -5,10 +5,8 @@ import style from './MyPosts.module.css';
 const AddPostForm = (props) => {
     return (
         <Formik initialValues={{newPostText: ''}}
-        onSubmit={(values) => {
-              props.addPost(values); 
-          }}>
-            {({touched}) => (
+        onSubmit={(values) => { props.addPost(values) }}>
+            {() => (
                 <Form >
                     <div className={style.field}>
                         <Field className={style.text} type='text' name='newPostText' placeholder='New post'/>
