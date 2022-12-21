@@ -1,7 +1,8 @@
 import React from 'react';
 import style from './ProfileInformation.module.css'
 import Preloader from '../../Common/Preloader/Preloader'
-import ProfileStatus from './ProfileStatus';
+//import ProfileStatus from './ProfileStatus';
+import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
 const ProfileInformation = (props) => {
   if (!props.profile) {
@@ -16,7 +17,7 @@ const ProfileInformation = (props) => {
     <div className={style.content}>
       <div>
         <div className={style.status}><img src={props.profile.photos.large} alt='foto'></img></div>
-        <div className={style.status}><ProfileStatus status={props.status} updateStatus={props.updateStatus} /></div>
+        <div className={style.status}><ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} /></div>
       </div>
     </div>
     </div>
