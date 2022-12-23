@@ -32,11 +32,9 @@ export const setInitialization = () => {
 
 /*ThunkCreators*/
 
-export const initializeApp = () => {
-    return async (dispatch) => {
+export const initializeApp = () => async (dispatch) => {
         await dispatch(getAuthUserData());
         dispatch(setInitialization());
-    }
 }
 
 

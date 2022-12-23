@@ -121,38 +121,31 @@ export const toggleFollowingInProgres = (isFetching, userID) => {
 
 /*ThunkCreators*/
 
-export const requestUsers = (currentPage, pageSize) => {
-    return (dispatch) => {
-        dispatch(setCurrentPage(currentPage));
-        dispatch(toggleIsFetching(true));
-        usersAPI.getMyUsers(currentPage, pageSize).then(data => {
+export const requestUsers = (currentPage, pageSize) => async (dispatch) => {
+       dispatch(setCurrentPage(currentPage));
+       dispatch(toggleIsFetching(true));
+       const data = await usersAPI.getMyUsers(currentPage, pageSize);
             dispatch(toggleIsFetching(false));
             dispatch(setUsers(data.items));
             dispatch(setTotalUsersCount(data.totalCount));
-        });
+}
+
+export const follow = (userID) => async (dispatch) => {
+    dispatch(toggleFollowingInProgres(true, userID));
+    const response = await usersAPI.follow(userID);
+    if (response.data.resultCode === 0) {
+        dispatch(followSuccess(userID));
     }
+    dispatch(toggleFollowingInProgres(false, userID));
 }
 
-export const follow = (userID) => {
-    return (dispatch) => {
-        dispatch(toggleFollowingInProgres(true, userID));
-        usersAPI.follow(userID).then(response => {
-            if (response.data.resultCode === 0) {
-            dispatch(followSuccess(userID));}
-        dispatch(toggleFollowingInProgres(false, userID));
-    });
-}
-}
-
-export const unfollow = (userID) => {
-    return (dispatch) => {
-        dispatch(toggleFollowingInProgres(true, userID));
-        usersAPI.unfollow(userID).then(response => {
-            if (response.data.resultCode === 0) {
-            dispatch(unfollowSuccess(userID));}
-        dispatch(toggleFollowingInProgres(false, userID));
-    });
-}
+export const unfollow = (userID) => async (dispatch) => {
+    dispatch(toggleFollowingInProgres(true, userID));
+    const response = await usersAPI.unfollow(userID);
+    if (response.data.resultCode === 0) {
+        dispatch(unfollowSuccess(userID));
+    }
+    dispatch(toggleFollowingInProgres(false, userID));
 }
 
 

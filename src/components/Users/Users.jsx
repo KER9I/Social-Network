@@ -2,6 +2,7 @@ import React from 'react';
 import style from './Users.module.css'
 import avaPhoto from '../../assets/images/avaPhoto.jpg'
 import { NavLink } from 'react-router-dom';
+import Paginator from '../Common/Paginator/Paginator';
 
 
 
@@ -18,12 +19,15 @@ let Users = (props) => {
 
     return (
         <div className={style.content}>
-            <div>
+            {/* <div>
                 {pages.map((p) => {
                     return <span className={props.currentPage === p && style.selected}
                         onClick={() => { props.onPageChanched(p) }}> {p}</span>
                 })}
-            </div>
+            </div> */}
+
+            <Paginator totalUsersCount={props.totalUsersCount} pageSize={props.pageSize} 
+            currentPage={props.currentPage} onPageChanched={props.onPageChanched} />
             {props.users.map((u) => <div key={u.id}>
                 <span>
                     <div>

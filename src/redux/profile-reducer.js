@@ -35,7 +35,7 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 profile: action.profile
             };
-            case SET_MY_STATUS:
+        case SET_MY_STATUS:
             return {
                 ...state,
                 status: action.status
@@ -70,29 +70,20 @@ export const setMyStatus = (status) => {
 
 /*ThunkCreators*/
 
-export const getUserProfile = (userId) => {
-    return (dispatch) => {
-        profileAPI.getProfile(userId).then(response => {
-            dispatch(setUserProfile(response.data));
-        });
-    }
+export const getUserProfile = (userId) => async (dispatch) => {
+    const response = await profileAPI.getProfile(userId);
+    dispatch(setUserProfile(response.data));
 }
 
-export const getStatus = (userId) => {
-    return (dispatch) => {
-        profileAPI.getStatus(userId).then(response => {
-            dispatch(setMyStatus(response.data));
-        });
-    }
+export const getStatus = (userId) => async (dispatch) => {
+    const response = await profileAPI.getStatus(userId);
+    dispatch(setMyStatus(response.data));
 }
 
-export const updateStatus = (status) => {
-    return (dispatch) => {
-        profileAPI.updateStatus(status).then(response => {
-            if (response.data.resultCode === 0) {
-            dispatch(setMyStatus(status));
-            }
-        });
+export const updateStatus = (status) => async (dispatch) => {
+    const response = await profileAPI.updateStatus(status);
+    if (response.data.resultCode === 0) {
+        dispatch(setMyStatus(status));
     }
 }
 

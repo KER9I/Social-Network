@@ -7,10 +7,6 @@ import { connect } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 
 
-
-
-
-
 const Login = (props) => {
     const onSubmit = (values, {setStatus}) => {
         props.login(values.email, values.password, values.rememberMe, setStatus)
