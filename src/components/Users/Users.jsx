@@ -19,14 +19,7 @@ let Users = (props) => {
 
     return (
         <div className={style.content}>
-            {/* <div>
-                {pages.map((p) => {
-                    return <span className={props.currentPage === p && style.selected}
-                        onClick={() => { props.onPageChanched(p) }}> {p}</span>
-                })}
-            </div> */}
-
-            <Paginator totalUsersCount={props.totalUsersCount} pageSize={props.pageSize} 
+            <Paginator totalItemsCount={props.totalUsersCount} pageSize={props.pageSize} 
             currentPage={props.currentPage} onPageChanched={props.onPageChanched} />
             {props.users.map((u) => <div key={u.id}>
                 <span>
