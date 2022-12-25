@@ -2,7 +2,15 @@
     display: inline-block;
 }
 .status {
-float: left;
-display: block;
+float: right;
+margin-left: 10px;
 margin-right: 15px;
+}
+
+.photo {
+    margin: 5px;
+}
+
+.selectPhoto {
+    margin: 0 0 10px 5px;
 }

@@ -9,9 +9,13 @@
 
   .field {
     font-weight: 600;
-    font-size:14px
+    font-size: 14px
 }
 .text {
   width: 300px;
+}
+
+.postsButton {
+  margin: 5px 0px 50px;
 }
 

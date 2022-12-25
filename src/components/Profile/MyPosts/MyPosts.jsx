@@ -6,21 +6,21 @@ import AddPostForm from './PostForm';
 
 const MyPosts = (props) => {
 
-let MyPostsElements = props.postData.map( (p) => <Post message={p.message} likecounter={p.likecounter} key={p.id} /> );
+  let MyPostsElements = props.postData.map((p) => <Post message={p.message} likecounter={p.likecounter} key={p.id} />);
 
-let onAddPost = (values) => {
-  props.addPost(values.newPostText)
-  
-}
+  let onAddPost = (values) => {
+    props.addPost(values.newPostText)
+
+  }
   return (
     <div className={style.content}>
-      <div>
-        <AddPostForm addPost={onAddPost} />
-      </div>
       <div className={style.posts}>
         <h2>Posts</h2>
       </div>
-      { MyPostsElements }
+      <div className={style.postsButton}>
+        <AddPostForm addPost={onAddPost} />
+      </div>
+      {MyPostsElements}
     </div>
   );
 }
