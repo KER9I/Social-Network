@@ -16,3 +16,10 @@
     grid-area: content;
     background-color: rgb(236, 236, 236);
     }
+
+.not-found {
+    position: relative;
+    text-align: center;
+    top: 100px;
+    font-weight: bold;
+}

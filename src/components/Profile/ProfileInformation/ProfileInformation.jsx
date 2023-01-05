@@ -22,8 +22,12 @@ const onPhotoSelected = (e) => {
     <div className={style.content}>
       <div>
         <div className={style.photo}><img className={style.photo} src={props.profile.photos.large || avaPhoto} width='300px' alt='foto'></img>
+        
         <div className={style.status}><ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} /></div>
+        <div className={style.photoBlock}>
+          <b>Change photo</b> 
         <div className={style.selectPhoto}>{ props.isOwner && <input type='file' onChange={ onPhotoSelected } />}</div>
+        </div>
         </div>
       </div>
     </div>

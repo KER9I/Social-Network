@@ -53,6 +53,8 @@ class App extends React.Component {
             <Route path='/settings' element={<Settings />} />
             
             <Route path='/info' element={<Info />} />
+
+            <Route path='*' element={<div className='not-found'>404 NOT FOUND</div>} />
           </Routes>
         </div>
       </div>
