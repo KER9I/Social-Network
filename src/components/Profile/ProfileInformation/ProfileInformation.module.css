@@ -1,5 +1,6 @@
 .content {
     display: inline-block;
+    cursor: pointer;
 }
 .status {
 float: right;
@@ -13,12 +14,4 @@ margin-right: 15px;
 
 .selectPhoto {
     margin: 0 0 10px;
-}
-.photoBlock {
-    max-width: 285px;
-    border: 2px solid black;
-    font-size: 18px;
-    font-style: italic;
-    margin-left: 5px;
-    padding-left: 10px;
 }

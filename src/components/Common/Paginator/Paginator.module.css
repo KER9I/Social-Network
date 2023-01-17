@@ -1,14 +1,25 @@
 .content {
+    margin-top: 10px;
     margin-left: 10px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 
+.unselected{
+margin: 3px;
+padding: 5px;
+}
 
 .selected {
 font-weight: bold;
+border: 1px solid black;
+margin: 3px;
+padding: 5px;
+background-color: rgb(165, 163, 163);
 }
 
 .button {
 margin: 5px;
+cursor: pointer;
 }
