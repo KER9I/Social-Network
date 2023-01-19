@@ -4,7 +4,7 @@ import HeaderCountainer from './components/Header/HeaderCountainer';
 import Nav from './components/Nav/Nav';
 import Info from './components/Info/Info';
 import Friends from './components/Friends/Friends';
-import UsersContainer from './components/Users/UsersContainer';
+import { UsersPage } from './components/Users/UsersPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MessagesContainer from './components/Messages/MessagesContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 import Preloader from './components/Common/Preloader/Preloader';
 import { initializeApp } from './redux/app-reducer';
 import { AppStateType } from './redux/redux-store';
+
 
 
 
@@ -47,7 +48,7 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
             
             <Route path='/messages' element={<MessagesContainer />} />
 
-            <Route path='/users' element={<UsersContainer />} />
+            <Route path='/users' element={<UsersPage />} />
 
             <Route path='/login' element={<Login />} />
             

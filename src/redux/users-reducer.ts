@@ -98,9 +98,9 @@ export const actions = {
 type ThunkType = BaseThunkType<ActionTypes>
 
 export const requestUsers = (currentPage: number, pageSize: number, filter: FilterType): ThunkType => async (dispatch, getState) => {
+    dispatch(actions.toggleIsFetching(true))
     dispatch(actions.setCurrentPage(currentPage))
     dispatch(actions.setFilter(filter))
-    dispatch(actions.toggleIsFetching(true))
     const usersData = await usersAPI.getMyUsers(currentPage, pageSize, filter.term, filter.friend)
     dispatch(actions.toggleIsFetching(false))
     dispatch(actions.setUsers(usersData.items))
