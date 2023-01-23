@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 import Preloader from './components/Common/Preloader/Preloader';
 import { initializeApp } from './redux/app-reducer';
 import { AppStateType } from './redux/redux-store';
+import ChatPage from './Pages/Chat/ChatPage';
 
 
 
@@ -52,6 +53,8 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
 
             <Route path='/login' element={<Login />} />
             
+            <Route path='/chat' element={<ChatPage />} />
+
             <Route path='/info' element={<Info />} />
 
             <Route path='*' element={<div className='not-found'>404 NOT FOUND</div>} />
