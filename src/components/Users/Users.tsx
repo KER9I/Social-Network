@@ -112,6 +112,5 @@ export const Users: React.FC<PropsType> = (props) => {
     );
 }
 
-export default Users;
-
+//export default Users;
 
