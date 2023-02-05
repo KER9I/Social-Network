@@ -5,7 +5,7 @@ import Nav from './components/Nav/Nav';
 import Info from './components/Info/Info';
 import Friends from './components/Friends/Friends';
 import { UsersPage } from './components/Users/UsersPage';
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, NavLink, Route, Routes } from 'react-router-dom';
 import MessagesContainer from './components/Messages/MessagesContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import Login from './components/Login/Login';
@@ -14,23 +14,27 @@ import Preloader from './components/Common/Preloader/Preloader';
 import { initializeApp } from './redux/app-reducer';
 import ChatPage from './Pages/Chat/ChatPage';
 import { AnyAction } from 'redux';
+import { connect } from 'react-redux';
+import { AppStateType } from './redux/redux-store';
 
 
 
-type PropsType = {
-  initialized: boolean
+type MapPropsType = ReturnType<typeof mapStateToProps>
+type DispatchPropsType = {
+  initializeApp: () => void
 }
 
 
-const App: React.FC<PropsType> = () => {
+class App extends React.Component<MapPropsType & DispatchPropsType> {
 
-  const dispatch = useDispatch()
-
-  const initialized = dispatch(initializeApp() as unknown as AnyAction)
-
-  if (!initialized) {
-    return <Preloader />
+  componentDidMount() {
+    this.props.initializeApp();
   }
+
+  render () {
+    if (!this.props.initialized) {
+      return <Preloader />
+    }
 
   return (
     <BrowserRouter>
@@ -64,11 +68,16 @@ const App: React.FC<PropsType> = () => {
     </BrowserRouter>
   )
 }
-
-export default App;
-
+  }
 
 
+const mapStateToProps = (state: AppStateType) => {
+  return {
+    initialized: state.app.initialized
+  }
+}
+
+export default connect(mapStateToProps, { initializeApp })(App);
 
 
 
