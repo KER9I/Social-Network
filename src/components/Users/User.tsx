@@ -28,19 +28,14 @@ const User: React.FC<PropsType> = ({followingInProgres, unfollow, follow, u}) =>
                         }}>Unfollow</button>
                         : <button disabled={followingInProgres.some(id => id === u.id)} onClick={() => {
                             follow(u.id);
+                            console.log(u)
                         }}>Follow</button>}
                 </div>
             </span>
-
-            <span>
-                <span><div>{u.name}</div>
+                <span>
+                    <div>{u.name}</div>
                     <div>{u.status}</div>
                 </span>
-                <span>
-                    <div>{'u.location.country'}</div>
-                    <div>{'u.location.city'}</div>
-                </span>
-            </span>
         </div>
     )
 }

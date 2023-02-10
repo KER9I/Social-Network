@@ -12,5 +12,10 @@
     color: rgb(1, 124, 35);
   }
  
-
+  .activeLink {
+    font-weight: bold;
+    text-decoration: underline;
+    font-style: italic;
+    color: rgb(0, 52, 28);
+}
  
