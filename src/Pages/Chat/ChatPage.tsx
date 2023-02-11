@@ -61,7 +61,7 @@ const Messages: React.FC<{}> = () => {
     }, [messages])
 
     return (
-        <div style={{ height: '400px', overflowY: 'auto' }} onScroll={scrollHandler}>
+        <div style={{ height: '480px', overflowY: 'auto', margin: '5px'}} onScroll={scrollHandler}>
             {messages.map((m) =>
                 <Message key={m.id} message={m} />)}
                 <div ref={messagesAnchorRef}></div>
@@ -102,7 +102,7 @@ const AddMessageForm: React.FC<{}> = () => {
                 <textarea placeholder='write text' onChange={(e) => setMessage(e.currentTarget.value)} value={message}></textarea>
             </div>
             <div>
-                <button disabled={status !== 'ready'} onClick={SendMessage}>Send</button>
+                <button style={{ marginBottom: '5px' }} disabled={status !== 'ready'} onClick={SendMessage}>Send</button>
             </div>
         </div>
     )

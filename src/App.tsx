@@ -45,7 +45,7 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
 
             <Route path='/profile/' element={<ProfileContainer />} />
 
-            <Route path='/messages' element={<MessagesContainer />} />
+            <Route path='/messages/' element={<MessagesContainer />} />
 
             <Route path='/users' element={<UsersPage />} />
 
@@ -57,7 +57,7 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
 
             <Route path='/' element={<Info />} />
 
-            <Route path='/*' element={<div className='not-found'>Uncorrect address</div>} />
+            <Route path='*' element={<div className='not-found'>Uncorrect address</div>} />
           </Routes>
         </div>
       </div>

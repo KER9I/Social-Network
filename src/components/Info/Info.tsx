@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Info.module.css'
-import gitIcon from '../../assets/images/gitIcon.png'
+import gitIcon from '../../assets/images/gitIcon.jpg'
 
 const Info = () => {
     return (
@@ -23,11 +23,11 @@ const Info = () => {
             </div>
             <div className={style.git}>
                 My Github where you can seen my another works:
-                <a href='https://github.com/KER9I' target='_blank' className={style.a}>
-                    Github
-                </a>
+                <div style={{marginLeft: '10px'}}>
+                    <img src={gitIcon} style={{mixBlendMode: 'normal'}} height='20px' />
+                    <a href='https://github.com/KER9I' target='_blank' className={style.a}>Github</a>
+                    </div>
             </div>
-
         </div>
     );
 }
