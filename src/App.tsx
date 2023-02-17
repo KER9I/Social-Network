@@ -10,9 +10,9 @@ import ProfileContainer from './components/Profile/ProfileContainer';
 import Login from './components/Login/Login';
 import Preloader from './components/Common/Preloader/Preloader';
 import { initializeApp } from './redux/app-reducer';
-import ChatPage from './Pages/Chat/ChatPage';
 import { connect } from 'react-redux';
 import { AppStateType } from './redux/redux-store';
+import ChatPageWithAuth from './Pages/Chat/ChatPage';
 
 
 
@@ -34,7 +34,7 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
     }
 
     return (
-
+        // <BrowserRouter>
         <HashRouter>
       <div className='app-wrapper'>
         <HeaderCountainer />
@@ -51,7 +51,7 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
 
             <Route path='/login' element={<Login />} />
 
-            <Route path='/chat' element={<ChatPage />} />
+            <Route path='/chat' element={<ChatPageWithAuth />} />
 
             <Route path='/info' element={<Info />} />
 
@@ -62,6 +62,7 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
         </div>
       </div>
       </HashRouter>
+     // </BrowserRouter>
   )
 }
 }

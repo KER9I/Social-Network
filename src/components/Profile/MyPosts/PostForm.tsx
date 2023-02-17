@@ -8,19 +8,22 @@ type AddPostFormPropsType = {
 }
 
 
-const AddPostForm: React.FC<AddPostFormPropsType> = ({addPost}) => {
+const AddPostForm: React.FC<AddPostFormPropsType> = ({ addPost }) => {
 
     let onAddPost = (values: string) => {
         addPost(values)
-      }
+    }
 
     return (
-        <Formik initialValues={{newPostText: ''}}
-        onSubmit={(values) => { onAddPost(values.newPostText) }}>
+        <Formik initialValues={{ newPostText: '' }}
+            onSubmit={(values, { resetForm }) => {
+                onAddPost(values.newPostText)
+                resetForm()
+            }}>
             {() => (
                 <Form >
                     <div className={style.field}>
-                        <Field className={style.text} type='text' name='newPostText' placeholder='New post'/>
+                        <Field className={style.text} type='text' name='newPostText' placeholder='New post' />
                     </div>
                     <div>
                         <button type='submit'>Add post</button>
@@ -29,6 +32,6 @@ const AddPostForm: React.FC<AddPostFormPropsType> = ({addPost}) => {
             )}
         </Formik>
     )
-  }
+}
 
 export default AddPostForm;

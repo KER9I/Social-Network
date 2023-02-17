@@ -6,15 +6,15 @@ import { BaseThunkType, InferActionsTypes } from './redux-store';
 
 let initialState = {
     postData: [
-        { id: 0, message: 'post 1', likecounter: 1 },
-        { id: 1, message: 'post 2', likecounter: 10 },
-        { id: 2, message: 'post 3', likecounter: 5 },
-        { id: 3, message: 'post 4', likecounter: 8 },
-        { id: 4, message: 'post 5', likecounter: 13 },
-        { id: 5, message: 'post 6', likecounter: 7 },
+        { id: 0, message: 'post 1'},
+        { id: 1, message: 'post 2'},
+        { id: 2, message: 'post 3'},
+        { id: 3, message: 'post 4'},
+        { id: 4, message: 'post 5'},
+        { id: 5, message: 'post 6'},
     ] as Array<PostType>,
     profile: null as ProfileType | null,
-    status: '',
+    status: 'double click to change status',
 }
 
 export type InitialStateType = typeof initialState;
@@ -22,10 +22,10 @@ export type InitialStateType = typeof initialState;
 const profileReducer = (state = initialState, action: ActionTypes): InitialStateType => {
     switch (action.type) {
         case 'ADD_POST':
+            let nextIdMessages = state.postData.length + 1
             let newPost = {
-                id: 6,
-                message: action.newPostText,
-                likecounter: 0
+                id: nextIdMessages + 1,
+                message: action.newPostText
             };
             return {
                 ...state,

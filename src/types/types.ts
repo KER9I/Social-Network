@@ -1,7 +1,6 @@
 export type PostType = {
     id: number
     message: string
-    likecounter: number
 }
 
 export type PhotosType = {

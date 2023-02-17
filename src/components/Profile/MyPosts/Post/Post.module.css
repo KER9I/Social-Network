@@ -5,3 +5,6 @@
 .Post img {
   width: 50px;
 }
+.likesbox {
+  display: flex;
+}

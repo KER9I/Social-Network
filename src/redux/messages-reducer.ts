@@ -34,10 +34,14 @@ export type InitialStateType = typeof initialState
 export const messagesReducer = (state = initialState, action: ActionTypes): InitialStateType => {
     switch (action.type) {
         case 'SEND_MESSAGE':
-            let newText = action.newMessageText;
+            let nextIdMessages = state.messagesText.length + 1
+            let newMessage = {
+                id: nextIdMessages + 1,
+                message: action.newMessageText
+             }
             return {
                 ...state,
-                messagesText: [...state.messagesText, { id: 6, message: newText }],
+                messagesText: [...state.messagesText, newMessage],
             };
         default:
             return state;

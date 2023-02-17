@@ -15,7 +15,7 @@ export type DispatchPropsType = {
 
 const MyPosts: React.FC<MapPropsType & DispatchPropsType> = ({postData, addPost}) => {
 
-  let MyPostsElements = postData.map((p) => <Post message={p.message} likecounter={p.likecounter} key={p.id} />);
+  let MyPostsElements = postData.map((p) => <Post message={p.message} key={p.id} />);
 
   return (
     <div className={style.content}>

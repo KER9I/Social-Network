@@ -46,8 +46,9 @@ const SendMessage: React.FC<AddMassageFormPropsType> = (props) => {
     }
     return (
         <Formik initialValues={{ newMessageText: '' }}
-            onSubmit = {(values) => {
-                addNewMessage(values.newMessageText);
+            onSubmit = {(values, {resetForm}) => {
+                addNewMessage(values.newMessageText)
+                resetForm()
             }}>
             {() => (
                 <Form>

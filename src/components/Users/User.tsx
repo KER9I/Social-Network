@@ -12,14 +12,20 @@ type PropsType = {
     follow: (userID: number) => void
 }
 
-const User: React.FC<PropsType> = ({followingInProgres, unfollow, follow, u}) => {
+const User: React.FC<PropsType> = ({ followingInProgres, unfollow, follow, u }) => {
     return (
-        <div>
+        <div style={{ marginBottom: '20px', display: 'flex' }}>
             <span>
                 <div>
                     <NavLink to={'/profile/' + u.id}>
                         <img src={u.photos.small !== null ? u.photos.small : avaPhoto} alt='img' className={style.img} />
                     </NavLink>
+                </div>
+            </span>
+            <div style={{ flexDirection: 'column'}}>
+                <div style={{margin: '5px'}}>
+                    <div><b>Name:</b> {u.name}</div>
+                    <div><b>Status:</b> {u.status ? u.status : 'no status'}</div>
                 </div>
                 <div>
                     {u.followed
@@ -31,11 +37,7 @@ const User: React.FC<PropsType> = ({followingInProgres, unfollow, follow, u}) =>
                             console.log(u)
                         }}>Follow</button>}
                 </div>
-            </span>
-                <span>
-                    <div>{u.name}</div>
-                    <div>{u.status}</div>
-                </span>
+            </div>
         </div>
     )
 }

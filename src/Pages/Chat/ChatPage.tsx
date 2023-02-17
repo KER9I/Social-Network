@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { AnyAction } from 'redux'
 import { ChatMessageType } from '../../api/chatAPI'
+import { withAuthNavigate } from '../../hoc/withAuthNavigate'
 import { getStartMessages, getStopMessages, SendChatMessages } from '../../redux/chat-reducer'
 import { AppStateType } from '../../redux/redux-store'
 
@@ -16,6 +17,7 @@ const ChatPage: React.FC = () => {
     )
 }
 
+const ChatPageWithAuth: React.FC = withAuthNavigate(ChatPage)
 
 const Chat: React.FC = () => {
     const dispatch = useDispatch()
@@ -108,6 +110,6 @@ const AddMessageForm: React.FC<{}> = () => {
     )
 }
 
-export default ChatPage
+export default ChatPageWithAuth
 
 

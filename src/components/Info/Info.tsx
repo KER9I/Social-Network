@@ -21,6 +21,13 @@ const Info = () => {
                             програмування: <i>React, Redux, TypeScript, HTML, CSS</i></strong>
                     </div></div>
             </div>
+            <div className={style.loginization}>         
+                Login and password with which you can test this site:
+                <div className={style.logPass}>
+                <div>Login: <span style={{color: 'red', margin: '50px'}}>welisem178@fsouda.com</span></div>
+                <div>Password: <span style={{color: 'red', margin: '16px'}}>test_profile</span></div>
+                </div>
+            </div>
             <div className={style.git}>
                 My Github where you can seen my another works:
                 <div style={{marginLeft: '10px'}}>
