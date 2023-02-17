@@ -32,7 +32,7 @@ const Info = () => {
                 My Github where you can seen my another works:
                 <div style={{marginLeft: '10px'}}>
                     <img src={gitIcon} style={{mixBlendMode: 'normal'}} height='20px' />
-                    <a href='https://github.com/KER9I' target='_blank' className={style.a}>Github</a>
+                    <a href='https://github.com/ksaviuk' target='_blank' className={style.a}>Github</a>
                     </div>
             </div>
         </div>
