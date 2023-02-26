@@ -6,21 +6,9 @@
 .contentText {
     padding: 15px;
     border: 2px solid teal;
-    margin: 0 50px 10px 10px ;
-    width: 550px;
+    margin: 10px 50px 10px 10px ;
+    width: 1050px;
     font-size: 18px;
-}
-
-.contentTextName {
-    padding: 15px;
-    border: 2px solid teal;
-    border-bottom: 0px;
-    margin: 10px 10px 0 10px;
-    width: 550px;
-    font-size: 18px;
-    font-weight: bold;
-    font-style: italic;
-    text-align: center;
 }
 
 .git {
