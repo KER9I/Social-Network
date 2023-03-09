@@ -4,7 +4,7 @@ import gitIcon from '../../assets/images/gitIcon.jpg'
 
 const Info = () => {
     return (
-        <div>
+        <>
             <div className={style.content}>
                 <div>
                     <div className={style.contentText}>
@@ -27,7 +27,7 @@ const Info = () => {
                     <a href='https://github.com/ksaviuk' target='_blank' className={style.a}>Github</a>
                     </div>
             </div>
-        </div>
+        </>
     );
 }
 

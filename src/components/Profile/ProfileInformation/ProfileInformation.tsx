@@ -19,16 +19,11 @@ const onPhotoSelected = (e: ChangeEvent<HTMLInputElement>) => {
 }
 
   return (
-    <div>
     <div className={style.content}>
-      <div>
         <div className={style.photo}><img className={style.photo} src={profile.photos.large || avaPhoto} width='300px' alt='foto'></img>
-        
         <div className={style.status}><ProfileStatusWithHooks status={status} updateStatus={updateStatus} /></div>
-        <div className={style.selectPhoto}><strong>Change photo: </strong>{ isOwner && <input type='file' onChange={ onPhotoSelected } />}</div>
+        { isOwner && <div className={style.selectPhoto}><strong>Change photo: </strong><input type='file' onChange={ onPhotoSelected } /></div> }
         </div>
-      </div>
-    </div>
     </div>
   );
 }
